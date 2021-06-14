@@ -1,0 +1,11 @@
+git init 
+git status
+git add.
+git add 'NOMEARQUIVO.txt'
+git commit 'Mensagem sobre a alteração feita'
+git remote -v ( verificar se ta tudo certo com a URL remota ) 
+git remote add origin 'URL_DO_REPOSITÓRIO' ( adicionar repositorio remoto ) 
+git push origin master/main ( subir a atualização para o repositorio remoto ) 
+git checkout ( trocar branch ) 
+git merge ( mesclar branch clone com a master/main ) 
+link util para entender o funcionamento de versionamentos >> https://learngitbranching.js.org/?NODEMO=&locale=pt_BR
