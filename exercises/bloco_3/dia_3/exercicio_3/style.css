@@ -8,3 +8,7 @@ li:hover {
 li:active {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+lo, ul { 
+    list-style: none;
+}
