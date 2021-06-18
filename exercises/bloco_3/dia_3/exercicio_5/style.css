@@ -25,3 +25,8 @@ li {
 .contemjava {
     background-color: pink;
 }
+
+.Links:hover, .links:active {
+font-weight: bold;
+color: red;
+}
