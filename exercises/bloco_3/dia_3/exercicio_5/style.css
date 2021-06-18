@@ -1,0 +1,11 @@
+.impar, .par {
+    background-color: yellow;
+}
+
+.par {
+    background-color: green;
+}
+
+.impar {
+    text-transform: lowercase;
+}
