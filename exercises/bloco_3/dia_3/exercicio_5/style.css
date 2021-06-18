@@ -1,0 +1,32 @@
+.impar, .par {
+    background-color: yellow;
+}
+
+.par {
+    background-color: green;
+}
+
+.impar {
+    text-transform: lowercase;
+}
+
+h1, h3 {
+    color: red;
+}
+
+li { 
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.tresprimeiros {
+    color: royalblue;
+}
+.contemjava {
+    background-color: pink;
+}
+
+.Links:hover, .links:active {
+font-weight: bold;
+color: red;
+}

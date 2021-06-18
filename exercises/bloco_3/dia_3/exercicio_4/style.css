@@ -1,0 +1,30 @@
+div:hover{
+    border-style: solid;
+}
+
+.div1 {
+    background-color: violet;
+}
+
+.div2 {
+    background-color: teal;
+}
+
+.div3 { 
+    background-color: tomato;
+}
+
+.div4 { 
+    background-color: rebeccapurple;
+}
+.div5 {
+    background-color: whitesmoke;
+}
+
+h3 {
+    font-family: monospace;
+    font-size: larger;
+    padding: 15px;
+    text-align: center;
+    font-style: italic;
+}
