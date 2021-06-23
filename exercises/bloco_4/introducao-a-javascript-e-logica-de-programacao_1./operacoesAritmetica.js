@@ -19,3 +19,8 @@ console.log(multiplicacao);
 
 let divisao = (a / b);
 console.log(divisao);
+
+// quinto programa 
+
+let modulo = (a % b);
+console.log(modulo);
