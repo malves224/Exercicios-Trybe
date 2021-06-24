@@ -1,0 +1,2 @@
+var saldoEmBanco = -6;
+
