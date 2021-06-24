@@ -17,4 +17,12 @@ if (salarioBase <= 1903.98) {
     salarioLiquido = salarioBase + " Insento de imposto de renda"
 }else if (salarioBase >= 1903.99 && salarioBase <= 2826.65){
     salarioLiquido = salarioBase - salarioBase * 0.075
-}else if (salarioBase >= 2826.66)
+}else if (salarioBase >= 2826.66 &&  salarioBase <= 3751.05){
+    salarioLiquido = salarioBase - salarioBase * 0.15 
+} else if (salarioBase >= 3751.06 && salarioBase <= 4664.68) {
+    salarioLiquido = salarioBase - salarioBase * 0.225
+} else if ( salarioBase > 4664.68) {
+    salarioLiquido = salarioBase - salarioBase * 0.275
+}
+
+console.log (salarioLiquido.toFixed(2));
