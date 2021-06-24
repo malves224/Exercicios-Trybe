@@ -1,4 +1,4 @@
-let pecaDeXadrez = "PEAO".toLocaleLowerCase();
+let pecaDeXadrez = "REI".toLowerCase();
 
 switch(pecaDeXadrez) {
 	case "cavalo":
@@ -15,6 +15,7 @@ switch(pecaDeXadrez) {
 		break;
 	case "rei": 
 		console.log ("movimeto para todos lados, limitado a uma casa");
+		break;
 	case "rainha":
 		console.log ("movimento para todos os lados, sem limites de casa");
 		break;
