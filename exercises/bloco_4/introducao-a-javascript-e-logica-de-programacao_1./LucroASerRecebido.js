@@ -1,5 +1,6 @@
 let salarioBruto = 5189.82;
 let valorInss = null;
+let salarioLiquido = null;
 
 if (salarioBruto > 0 && salarioBruto <= 1556.94){
     valorInss = salarioBruto * 0.08;
@@ -10,3 +11,10 @@ if (salarioBruto > 0 && salarioBruto <= 1556.94){
 } else if (salarioBruto > 5189.82) {
     valorInss = 570.88
 }
+let salarioBase = salarioBruto - valorInss;
+
+if (salarioBase <= 1903.98) {
+    salarioLiquido = salarioBase + " Insento de imposto de renda"
+}else if (salarioBase >= 1903.99 && salarioBase <= 2826.65){
+    salarioLiquido = salarioBase - salarioBase * 0.075
+}else if (salarioBase >= 2826.66 )
