@@ -17,4 +17,4 @@ if (salarioBase <= 1903.98) {
     salarioLiquido = salarioBase + " Insento de imposto de renda"
 }else if (salarioBase >= 1903.99 && salarioBase <= 2826.65){
     salarioLiquido = salarioBase - salarioBase * 0.075
-}else if (salarioBase >= 2826.66 )
+}else if (salarioBase >= 2826.66)
