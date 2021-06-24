@@ -1,4 +1,4 @@
-let pecaDeXadrez = "CAVALO".toLocaleLowerCase();
+let pecaDeXadrez = "PEAO".toLocaleLowerCase();
 
 switch(pecaDeXadrez) {
 	case "cavalo":
@@ -18,4 +18,6 @@ switch(pecaDeXadrez) {
 	case "rainha":
 		console.log ("movimento para todos os lados, sem limites de casa");
 		break;
+	default: 
+		console.log ("Peça invalida")	
 	}	
