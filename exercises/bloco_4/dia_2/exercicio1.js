@@ -1,10 +1,16 @@
 let soma = null;
 let mediaAritmetica = null;
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-let maiorValor = null;
+let numbers = [1, 8, 43, 23, 70, 8, 100, 8, 36, 298];
+let contadorDeImpares = null;
 for (let i = 0; i < numbers.length; i += 1){
-        if (maiorValor < numbers[i]){
-          maiorValor = (numbers[i])
-        } 
+        if (numbers[i] % 2 === 1){
+          contadorDeImpares += 1;
+        } else if (contadorDeImpares === 0) {
+          contadorDeImpares += 0
+        }
     }
-console.log(maiorValor);
+if (contadorDeImpares > 0){
+  console.log(contadorDeImpares)
+} else {
+  console.log("nao ha numeros impares")
+}
