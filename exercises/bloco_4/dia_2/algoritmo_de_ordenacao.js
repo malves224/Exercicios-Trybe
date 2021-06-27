@@ -2,7 +2,6 @@ let array = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 for (let index = 0; index < array.length; index += 1) 
   for (let secondIndex = index-1; secondIndex < index; secondIndex += 1) {
     array[secondIndex] = array[secondIndex] * array[index];
-    array
     }
   
 
