@@ -2,7 +2,7 @@ let player = {
     nome: 'marta',
     lastName: 'silva',
     age: 34,
-    medals: {
+    medalhas: {
         golden: 2,
         silver: 3
     },
@@ -12,3 +12,5 @@ let player = {
 console.log('a jogadora ', player.nome, 'tem', player.age, 'anos de idade');
 
 console.log('a jogadora', player.nome, 'foi eleita a melhor do mundo por ', player.bestInTheWorld.length, 'vezes')
+
+console.log('a jogadora possui', player.medalhas.golden, 'medalhas de ouro e', player.medalhas.silver, 'de prata ')
