@@ -8,4 +8,4 @@ for (let index = palavra.length-1; index > -1; index -= 1){
     console.log(false);
 }
 }
-verificaPalindromo ("desenvolvimento")
+verificaPalindromo ("desenvolvimento") 
