@@ -14,4 +14,4 @@ function percorreObjetoCar (elementoASerPesquisado) {
     }
   }
 }
-//percorreObjetoCar ('chaves e valores');
+percorreObjetoCar ('chaves e valores');
