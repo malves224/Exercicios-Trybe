@@ -9,3 +9,7 @@ let info = {
   info.recorrente = "Sim"
   
   console.log(info)
+
+  for (key in info){
+      console.log(key);
+  }
