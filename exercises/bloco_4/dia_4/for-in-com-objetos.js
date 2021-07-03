@@ -29,7 +29,29 @@ for (let key1 in info){
     if ( info[key1] === info2[key2]){
     console.log("ambos recorrentes")
     } else if (key1 === key2){
-            console.log(info[key1], "e", info2[key2]);
+            console.log(info[key1], "e", key2);
         }
 }
+}
+// info[key1] acessa valor
+// key2 acessa chave 
+
+let names = {
+  person1: 'João',
+  person2: 'Maria',
+  person3: 'Jorge' 
+};
+
+for (let key in names) {
+  console.log("olá " + names[key])// percorre valores das chaves
+}
+
+let car = {
+  model: 'A3 Sedan',
+  manufacturer: 'Audi',
+  year: 2020
+};
+
+for (let key in car){
+  console.log(key + ' ' + car[key])
 }
