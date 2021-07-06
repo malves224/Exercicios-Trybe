@@ -10,13 +10,17 @@
       <div id="quartoEUltimoFilho"></div>
     </div>
     <script>
-        document.querySelector('#elementoOndeVoceEsta').parentNode;
+        let paiDoOndeVcEsta = document.querySelector('#elementoOndeVoceEsta').parentNode;
         document.querySelector('#elementoOndeVoceEsta').firstElementChild;      
         document.querySelector('#pai').firstElementChild;  
         document.querySelector('#elementoOndeVoceEsta').previousElementSibling;
         document.querySelector('#elementoOndeVoceEsta').nextSibling;
         document.querySelector('#elementoOndeVoceEsta').nextElementSibling;
         document.querySelector('#pai').children[document.querySelector('#pai').children.length - 2];
-        
+        // exercicio parte II 
+          // exercicio 1 Crie um irmão para elementoOndeVoceEsta .
+            let irmaoParaOndeVcEsta = document.createElement('div');
+            irmaoParaOndeVcEsta.innerText = 'mais um irmão para o OndeVoceEsta'
+            paiDoOndeVcEsta.appendChild(irmaoParaOndeVcEsta)
     </script>
   </div>
