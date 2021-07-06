@@ -47,3 +47,22 @@ function defineClassName (event) {
    const origimDoEvento = event.target;
    origimDoEvento.className = 'tech';
 }
+
+//exercicio 3 
+function trocarTexto (event){
+  const input = document.querySelector('#input');
+  const elementoASerAlterado = document.querySelector('.tech');
+  elementoASerAlterado.innerText = input.value;
+  
+}
+
+input.addEventListener('keyup', trocarTexto )
+
+//exercicio 4 
+const top3 = document.getElementById('my-spotrybefy')
+function redirecionarLink (event){
+  window.location.href = "https://malves224.github.io/";
+}
+top3.addEventListener('dblclick', redirecionarLink),
+
+//
