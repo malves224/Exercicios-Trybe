@@ -63,3 +63,25 @@ function MaiorCaracteres (array){
   return MaiorCaracteres
 }
 console.log(MaiorCaracteres(['Fernanda', 'Lucas', 'Nádia', 'Cairo', ]));
+
+//exercicio 5 Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
+
+function maisRepetido (array){
+  let repeticoesIndex = 0;
+  let oValorMaisRepetido;
+  let vezesQueOValorRepetiu = 0;
+  for (let valor of array){
+    for (let valor2 of array){
+      if (valor === valor2){
+        repeticoesIndex += 1;
+      }
+    }
+    if (repeticoesIndex > vezesQueOValorRepetiu){
+      vezesQueOValorRepetiu = repeticoesIndex;
+      oValorMaisRepetido = valor;
+      repeticoesIndex = 0;
+    }
+  }
+  return oValorMaisRepetido
+}
+console.log(maisRepetido([1, 3, 2, 1, 8, 2, 1]));
