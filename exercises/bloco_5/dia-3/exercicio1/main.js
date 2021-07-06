@@ -63,6 +63,11 @@ const top3 = document.getElementById('my-spotrybefy')
 function redirecionarLink (event){
   window.location.href = "https://malves224.github.io/";
 }
-top3.addEventListener('dblclick', redirecionarLink),
+top3.addEventListener('dblclick', redirecionarLink);
 
-//
+function passadaDeMouse (){
+  top3.style.color = 'red';
+}
+
+top3.addEventListener('mouseover', passadaDeMouse);
+top3.addEventListener('mouseout', function (){top3.style.color = 'white'})
