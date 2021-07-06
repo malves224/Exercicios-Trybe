@@ -60,7 +60,7 @@
 		function mudarTextoPorTagName(tag, frase) {
 			let tagForFunction = document.getElementsByTagName(tag);
 			for (let index in tagForFunction){
-				tagForFunction[index].innerText = frase
+				tagForFunction[index].innerText = frase.toUpperCase();
 			}
 		}
 		mudarTextoPorTagName ('p', 'irei ser um ótimo programador');
