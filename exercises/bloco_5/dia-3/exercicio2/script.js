@@ -14,7 +14,7 @@ function createDaysOfTheWeek() {
 createDaysOfTheWeek();
 const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const holiday = ['24', '25', '31'];
-const friday =  ['4', '11', '18', '25'];
+const friday = ['4', '11', '18', '25'];
 // exercicio 1 
 function createDaysNumeric(dezDaysList, holiday, friday) {
 	const ulPai = document.getElementById('days');
@@ -46,11 +46,27 @@ function createDaysNumeric(dezDaysList, holiday, friday) {
 }
 createDaysNumeric(dezDaysList, holiday, friday)
 //exercicio 2
-function criarBotaoFeriados (){
-const buttonsContainer = document.querySelector('.buttons-container');
-const button = document.createElement('button');
-button.id = 'btn-holiday';
-button.innerHTML = 'Feriados'
-buttonsContainer.appendChild(button)
-} 
-criarBotaoFeriados ();
+function criarBotaoFeriados() {
+	const buttonsContainer = document.querySelector('.buttons-container');
+	const button = document.createElement('button');
+	button.id = 'btn-holiday';
+	button.innerText = 'Feriados'
+	buttonsContainer.appendChild(button)
+}
+criarBotaoFeriados();
+const buttonHoliday = document.getElementById('btn-holiday');
+
+function mudarCorDosFeriados() {
+	const arrayHolidayDays = document.querySelectorAll('.holiday');
+	for (let index in arrayHolidayDays) {
+		let colorAtual = arrayHolidayDays[index].style.backgroundColor;
+		if (colorAtual === '') {
+			arrayHolidayDays[index].style.backgroundColor = 'red';
+			arrayHolidayDays[index].style.color = 'white';
+		} else {
+			arrayHolidayDays[index].style.backgroundColor = '';
+			arrayHolidayDays[index].style.color = '';
+		}
+	}
+}
+buttonHoliday.addEventListener('click', mudarCorDosFeriados)
