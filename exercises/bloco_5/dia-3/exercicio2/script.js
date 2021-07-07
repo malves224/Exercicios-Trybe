@@ -55,7 +55,7 @@ function criarBotaoFeriados() {
 }
 criarBotaoFeriados();
 const buttonHoliday = document.getElementById('btn-holiday');
-
+// exercicio 3
 function mudarCorDosFeriados() {
 	const arrayHolidayDays = document.querySelectorAll('.holiday');
 	for (let index in arrayHolidayDays) {
@@ -70,3 +70,13 @@ function mudarCorDosFeriados() {
 	}
 }
 buttonHoliday.addEventListener('click', mudarCorDosFeriados)
+
+// exercio 4
+function criarBotaoSexta() {
+	const buttonsContainer = document.querySelector('.buttons-container');
+	const button = document.createElement('button');
+	button.id = 'btn-friday';
+	button.innerText = 'Sexta-feira'
+	buttonsContainer.appendChild(button)
+}
+criarBotaoSexta();
