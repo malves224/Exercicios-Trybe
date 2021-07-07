@@ -97,3 +97,19 @@ function mudarCorDasSextaFeita() {
 	}
 }
 buttonFriday.addEventListener('click', mudarCorDasSextaFeita)
+
+//exercicio 6
+
+function addEventInArray (event) {
+let todosDias = document.getElementsByClassName('day');
+for (let index in todosDias){
+	todosDias[index].addEventListener('mouseover', efeitoZoom)
+	todosDias[index].addEventListener('mouseout', function(event){event.target.style.fontSize = ''})
+	function efeitoZoom (event) {
+		console.log(event.target)
+		let liOver = event.target
+		liOver.style.fontSize = '35px';
+		}
+	}
+}
+addEventInArray ();
