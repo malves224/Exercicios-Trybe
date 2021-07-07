@@ -80,3 +80,20 @@ function criarBotaoSexta() {
 	buttonsContainer.appendChild(button)
 }
 criarBotaoSexta();
+
+//exercicio 5
+const buttonFriday = document.getElementById('btn-friday');
+function mudarCorDasSextaFeita() {
+	const arrayFriday = document.querySelectorAll('.friday');
+	for (let index in arrayFriday) {
+		let colorAtual = arrayFriday[index].style.backgroundColor;
+		if (colorAtual === '') {
+			arrayFriday[index].style.backgroundColor = 'blue';
+			arrayFriday[index].style.color = 'white';
+		} else {
+			arrayFriday[index].style.backgroundColor = '';
+			arrayFriday[index].style.color = '';
+		}
+	}
+}
+buttonFriday.addEventListener('click', mudarCorDasSextaFeita)
