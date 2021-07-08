@@ -83,6 +83,7 @@ criarBotaoSexta();
 
 //exercicio 5
 const buttonFriday = document.getElementById('btn-friday');
+
 function mudarCorDasSextaFeita() {
 	const arrayFriday = document.querySelectorAll('.friday');
 	for (let index in arrayFriday) {
@@ -100,16 +101,30 @@ buttonFriday.addEventListener('click', mudarCorDasSextaFeita)
 
 //exercicio 6
 
-function addEventInArray (event) {
-let todosDias = document.getElementsByClassName('day');
-for (let index in todosDias){
-	todosDias[index].addEventListener('mouseover', efeitoZoom)
-	todosDias[index].addEventListener('mouseout', function(event){event.target.style.fontSize = ''})
-	function efeitoZoom (event) {
-		console.log(event.target)
-		let liOver = event.target
-		liOver.style.fontSize = '35px';
+function addEventInArray(event) {
+	let todosDias = document.getElementsByClassName('day');
+	for (let index in todosDias) {
+		todosDias[index].addEventListener('mouseover', efeitoZoom)
+		todosDias[index].addEventListener('mouseout', function (event) {
+			event.target.style.fontSize = ''
+		})
+
+		function efeitoZoom(event) {
+			console.log(event.target)
+			let liOver = event.target
+			liOver.style.fontSize = '35px';
 		}
 	}
 }
-addEventInArray ();
+addEventInArray();
+
+//exercicio 7
+
+const elemento = document.createElement('span');
+const input = document.getElementById('task-input');
+const elementoASerAddFilho = document.getElementsByClassName('my-tasks')[0];
+const buttonAdd = document.querySelector('#btn-add')
+function adicionaTarefa (event) {
+	console.log(event.target)
+}
+buttonAdd.addEventListener('click', function(event){console.log(event.target)})
