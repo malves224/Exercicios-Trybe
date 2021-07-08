@@ -21,3 +21,21 @@ function changeBackgroundcolor() {
 }
 
 changeBackgroundcolor();
+// requisito 2:
+function changeCollorText() {
+    const inputChooseColorText = document.getElementById('input-color-text');
+    const buttonForChangeTextColor = document.getElementById('button-change-text-color');
+    const textCollor = document.querySelector('.article');
+
+    function changeCollorText(event) {
+        let input = inputChooseColorText.value;
+        localStorage.setItem('colorText', input)
+        let valor = localStorage.getItem('colorText')
+        textCollor.style.color = valor;
+
+    }
+    buttonForChangeTextColor.addEventListener('click', changeCollorText)
+    let valor = localStorage.getItem('colorText');
+    textCollor.style.color = valor;
+}
+changeCollorText()
