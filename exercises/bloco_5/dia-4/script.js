@@ -72,3 +72,22 @@ function changeLineSpacing (){
 
 }
 changeLineSpacing ();
+// requisito 5
+function changeFontFamily () {
+    const inputChooseFontFamily = document.getElementById('input-font-family');
+    const buttonFontFamily = document.getElementById('button-font-family');
+    const fontFamily = document.querySelector('.article');
+
+    function changeFontFamily (){
+        let input = inputChooseFontFamily.value;
+        localStorage.setItem('fontFamily', input)
+        fontFamily.style.fontFamily = input;
+    }
+    buttonFontFamily.addEventListener('click', changeFontFamily)
+    let valor = localStorage.getItem('fontFamily');
+    fontFamily.style.fontFamily = valor;
+}
+
+changeFontFamily();
+
+//
