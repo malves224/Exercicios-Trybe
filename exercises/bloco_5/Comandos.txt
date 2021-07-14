@@ -1,0 +1,9 @@
+1 seletores de elementos
+
+getElementById: acessa um unico elemento por ID
+getElementByClassName: acessa o primeiro elemento com a classe 
+getElementsByTagName: acessa todos elementos (array) com a TagName
+querySelector: acessa qualquer elemento da mesmo forma dos seletores CSS (#, ., p) e com apenas um elemento o primeiro.
+querySelectorAll: trabalha com seletores CSS, e retorna um nodelist (array de elementos)
+
+2 trabalhando com elementos 
