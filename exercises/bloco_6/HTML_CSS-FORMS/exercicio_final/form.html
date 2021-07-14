@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cadastro de curriculo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1> Cadastre seu curriculo</h1>
+    <form action="" method="get">
+      <fieldset>
+        <label for="nome">Nome completo:</label>
+        <input placeholder="Insira seu nome completo" required maxlength="40" type="text" name="nome" id="nome">
+      </fieldset>
+      <fieldset>
+        <label for="email">Seu email:</label>
+        <input placeholder="insira seu email " required maxlength="50" type="email" name="email" id="email">
+      </fieldset>
+      <fieldset>
+        <label for="CPF">CPF:</label>
+        <input required placeholder="insira seu cpf" maxlength="11" type="text" name="CPF" id="CPF">
+      </fieldset>
+      <fieldset>
+        <label for="endereco">Seu endereço:</label>
+        <input required placeholder="insira seu endereço" maxlength="28"  type="text" name="endereço" id="endereco">
+      </fieldset>
+      <fieldset>
+        <label for="cidade">Cidade:</label>
+        <input placeholder="Insira sua cidade" required maxlength="28" type="text">
+      </fieldset>
+      <fieldset>
+        <label for="estados">Insira seu estado</label>
+        <select required name="estado" id="estados">
+        </select>
+      </fieldset>
+      <fieldset>
+        <label for="casa">Casa</label>
+        <input required name="tipo" id="casa" type="radio">
+          <label for="Apartamento">Apartamento</label>
+          <input required name="tipo" id="Apartamento" type="radio">
+      </fieldset>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
