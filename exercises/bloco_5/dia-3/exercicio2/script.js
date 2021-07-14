@@ -110,6 +110,8 @@ function addEventInArray(event) {
 		})
 
 		function efeitoZoom(event) {
+			let selecaoAtual = document.querySelector('.selected')
+			selecaoAtual.className = "color "
 			console.log(event.target)
 			let liOver = event.target
 			liOver.style.fontSize = '35px';
