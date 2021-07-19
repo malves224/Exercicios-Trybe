@@ -11,13 +11,35 @@ function criarOption() {
   }
 }
 
-function handle () {
-  
-}
+window.onload = function (){
+  new window.JustValidate('.js-form', {
+    rules: {
+      name: { //valor atribuido na tag form em data-validate-field
+        required: true,
+        maxLength: 40,
+        minLength: 3,
+      },
+      email: {
+        required: true,
+        maxLength: 50
+      },
+      cpf: {
+        required: true,
+        maxLength: 11
+      }
+    },
+    messages: {
+      name: {
+        required: 'Voce precisa prencher aqui',
+        minLength: 'insira um nome com mais de 2 caracteres',
+        maxLength: 'nome muito grande'
+      },
+      email: {
+        required: 'Por favor insira seu email',
+        maxLength: 'email muito grande'
+      }
+    },
 
-window.onload = function () {
+  });  
   criarOption ();
-  new window.JustValidate('.js-Form')
-  const buttonSubmit = document.getElementById('Enviar');
-  buttonSubmit.addEventListener('click', )
 }

@@ -1,7 +1,6 @@
 {
   "name": "exercicio_final",
   "version": "1.0.0",
-  "description": "",
   "main": "just-validate.min.js",
   "dependencies": {
     "just-validate": "^1.5.0"
@@ -12,5 +11,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }

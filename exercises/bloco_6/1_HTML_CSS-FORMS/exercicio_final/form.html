@@ -7,53 +7,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cadastro de curriculo</title>
   <link rel="stylesheet" href="bootstrap.css">
-  <link rel="stylesheet" href="node_modules/just-validate/dist/css/justValidateTooltip.min.css">
-  <script src="jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
   <main>
+    <header >
     <h1 class="text-xxl-center mt-3 mb-4" > Cadastre seu curriculo</h1>
-    <form  class="container js-Form" action="" method="get">
-      <div class="mb-4 mt-3" id="dadosPessoais">
+    </header>
+    <form  class="container js-form" action="" method="get">
+      <fieldset class="mb-4 mt-3" id="dadosPessoais">
         <h2>Dados pessoais</h2>
         <label class="form-label mt-3"for="nome">Nome completo</label>
-        <input class="form-control"  placeholder="Insira seu nome" type="text" name="nome" id="nome">
+        <input data-validate-field="name" class="form-control"  placeholder="Insira seu nome" type="text" name="nome" id="nome"  >
         <label class="form-label mt-3"for="email">Seu email</label>
-        <input class="form-control" placeholder="insira seu email " required type="email" name="email" id="email">
+        <input  data-validate-field="email" class="form-control" placeholder="insira seu email "  type="email" name="email" id="email">
         <label class="form-label mt-3" for="CPF">CPF</label>
-        <input class="form-control" required placeholder="insira seu cpf" maxlength="11" type="text" name="CPF" id="CPF">
+        <input data-validate-field="cpf" class="form-control"  placeholder="insira seu cpf" maxlength="11" type="text" name="CPF" id="CPF" data-validate-field="cpf">
         <label class="form-label mt-3" for="endereco">Seu endereço</label>
-        <input class="form-control" required placeholder="insira seu endereço" maxlength="28"  type="text" name="endereço" id="endereco">
+        <input data-validate-field="address" class="form-control"  placeholder="insira seu endereço" maxlength="28"  type="text" name="endereço" id="endereco" >
         <label class="form-label mt-3" for="cidade">Cidade</label>
-        <input class="form-control" name="Cidade" id="cidade" placeholder="Insira sua cidade" required maxlength="28" type="text">
+        <input  data-validate-field="city" class="form-control" name="Cidade" id="cidade" placeholder="Insira sua cidade"  maxlength="28" type="text" >
         <label class="form-label mt-3" for="estados">Insira seu estado</label>
-        <select class="form-control" required name="estado" id="estados"></select>
-        <div class="form-check" >
-          <input class="form-check-input" checked required name="complemento" id="casa" type="radio" value="Casa">
+        <select data-validate-field="state" class="form-control"  name="estado" id="estados" ></select>
+        <fieldset class="form-check" >
+          <input data-validate-field="complemento" class="form-check-input" name="complemento" id="casa" type="radio" value="Casa">
           <label class="form-check-label"  for="casa">Casa</label>
-        </div> 
-        <div class="form-check">       
-          <input class="form-check-input" required name="complemento" id="Apartamento" type="radio" value="Apart">
+        </fieldset> 
+        <fieldset class="form-check">       
+          <input data-validate-field="complemento" class="form-check-input"  name="complemento" id="Apartamento" type="radio" value="Apart">
           <label class="form-check-label"  for="Apartamento">Apartamento</label>
-        </div>
-      </div>
-      <div class="mb-4 mt-3" id="ultimoEmprego">
+        </fieldset>
+      </fieldset>
+      <fieldset class="mb-4 mt-3" id="ultimoEmprego">
         <h2>seu ultimo emprego</h2>
         <label class="form-label mt-3" id="resumo-curriculo" for="resumoCurriculo">resumo do curriculo: </label>
         <br>
-        <textarea  class="form-control" placeholder="insira um resumo do seu curriculo" required maxlength="1000" name="resumo" id="resumoCurriculo" cols="30" rows="10"></textarea>
+        <textarea data-validate-field="resumo"  class="form-control" placeholder="insira um resumo do seu curriculo" required maxlength="1000" name="resumo" id="resumoCurriculo" cols="30" rows="10"></textarea>
         <br>
         <label class="form-label mt-3" for="cargo">Cargo</label>
-        <input class="form-control" required maxlength="40" type="text" name="cargo" id="cargo">
+        <input data-validate-field="cargo" class="form-control" required maxlength="40" type="text" name="cargo" id="cargo">
         <br>
         <label class="form-label mt-3" for="descricaoCargo">Descrição do Cargo:</label>
         <br>
-        <textarea class="form-control" placeholder="insira uma breve descrição do cargo exercido anteriormente" required maxlength="500" name="descricao-Do-Cargo" id="descricaoCargo" cols="30" rows="10"></textarea>
+        <textarea data-validate-field="descricao" class="form-control" placeholder="insira uma breve descrição do cargo exercido anteriormente" required maxlength="500" name="descricao-Do-Cargo" id="descricaoCargo" cols="30" rows="10"></textarea>
         <br>
         <label class="form-label mt-3" for="data">data de inicio:</label>
         <input class="form-control" required type="date" name="data-inicio" id="data">
-      </div>
+      </fieldset>
       <button class="btn btn-primary" id="Enviar" type="submit">Enviar</button>
       <button class="btn btn-danger" type="reset">Limpar tudo</button>
     </form>
