@@ -33,7 +33,6 @@ html {
   .aside-one, .aside-two {
     background-color: rgb(247, 245, 245);
     border-radius: 5px;
-    box-shadow:;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -76,4 +75,29 @@ html {
   .footer h3, p {
     margin: 10px 5px; 
     padding: 5px;
+  }
+
+  @media screen and (min-width: 720px) {
+    .header ul li {
+      list-style: outside;
+      margin: 0 5px;
+    }
+    .header{
+      font-size: 1.3em;
+    }
+    .aside-content {
+      display: flex;
+      margin-top: 25px;
+    }
+    .aside-content aside {
+      flex-grow: 1;
+    }
+    .main-content {
+      font-size: 1.5em;
+      line-height: 90px;
+      margin: 5px 10px;
+    }
+    .footer {
+      line-height: normal;
+    }
   }
