@@ -101,3 +101,24 @@ html {
       line-height: normal;
     }
   }
+
+  @media screen and (min-width: 1000px) {
+    body {
+      background-color: rgb(233, 233, 233);
+    }
+    .content-main {
+      background-color: white;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+    }
+    .aside-content {
+      margin: auto;
+      margin-top: 50px;
+    }
+    .main-content{
+      margin: 10px 25px;
+      padding: auto;
+    }
+  }
