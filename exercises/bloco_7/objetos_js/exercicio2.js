@@ -23,3 +23,7 @@ const lesson1 = {
   addKey (lesson2, 'turno', 'manhã');
 
   console.log(lesson2);
+
+  const printKeys = objeto => Object.keys(objeto);
+
+  console.log (printKeys(lesson2));
