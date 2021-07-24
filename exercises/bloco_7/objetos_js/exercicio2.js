@@ -25,7 +25,22 @@ const lesson1 = {
 
   const printKeys = objeto => Object.keys(objeto);
 
-  console.log (printKeys(lesson2));
+  //console.log (printKeys(lesson2));
 
 const lengthObject = (objeto) => Object.keys(objeto).length;
-console.log(lengthObject(lesson3));
+//console.log(lengthObject(lesson3));
+
+const AllLessons = {} 
+Object.assign(AllLessons , {lesson1, lesson2, lesson3});// o allLessons é um objeto que contem 3 objetos sendo os objetos que estao no 2 parametro. 
+//console.log(Object(Object.values(AllLessons))); 
+
+const ContabilizaEstudantes = (objeto) => {
+	const arrayComObjetos = Object.values(objeto);// objeto que esta com todos objetos anterios em array
+	let TotalEstudantes = 0;
+	for (let index = 0; index < arrayComObjetos.length; index += 1) {
+		TotalEstudantes = TotalEstudantes + arrayComObjetos[index].numeroEstudantes; //como transformei o objeto em um array em que cada posição do array é um objeto conseguimos percorrer o array e extrair valor de cada posição usando .NomeDaChave
+	}
+	return TotalEstudantes;
+}
+
+console.log(ContabilizaEstudantes(AllLessons));
