@@ -43,4 +43,8 @@ const ContabilizaEstudantes = (objeto) => {
 	return TotalEstudantes;
 }
 
-console.log(ContabilizaEstudantes(AllLessons));
+//console.log(ContabilizaEstudantes(AllLessons));
+
+const valorPorPosicao = (objeto, index) => Object.values(objeto)[index];
+
+console.log(valorPorPosicao(lesson2, 1));
