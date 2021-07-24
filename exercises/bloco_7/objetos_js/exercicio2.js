@@ -47,4 +47,21 @@ const ContabilizaEstudantes = (objeto) => {
 
 const valorPorPosicao = (objeto, index) => Object.values(objeto)[index];
 
-console.log(valorPorPosicao(lesson2, 1));
+//console.log(valorPorPosicao(lesson2, 1));
+
+
+const verificarPar = (objeto, chave, valor) => {
+	const arrayComArrays = Object.entries(objeto)
+	let output;
+	for (let index = 0; index < arrayComArrays.length; index += 1){
+		if (chave == arrayComArrays[index][0] && valor === arrayComArrays[index][1]){
+			output = true;
+			break;
+		} else {
+			output = false;
+		}
+	}
+	return output;
+}
+
+console.log(verificarPar(lesson1, 'materia', 'Matemática'));
