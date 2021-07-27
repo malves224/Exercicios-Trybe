@@ -9,3 +9,4 @@ function sum(a, b) {
 }
 
 // implemente seus testes aqui
+assert.strictEqual(sum(0,0), 0);
