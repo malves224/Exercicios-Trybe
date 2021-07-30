@@ -139,10 +139,17 @@ function booksOrderedByReleaseYearDesc() {
 
 
 
-const expectedResultSecXx = false;
 
 function everyoneWasBornOnSecXX() {
-  return books.every((value, index, element) => value.author.birthYear > 1901 && value.author.birthYear < 2000 )
+  return books.every((value) => value.author.birthYear > 1901 && value.author.birthYear < 2000 )
 }
 
-assert.strictEqual(everyoneWasBornOnSecXX(), expectedResultSecXx);
+assert.strictEqual(everyoneWasBornOnSecXX(), false);
+
+const expectedResultSix = true;
+
+function someBookWasReleaseOnThe80s() {
+  return books.some((value) => value.releaseYear > 1979 && value.releaseYear < 2000 )
+}
+
+assert.strictEqual(someBookWasReleaseOnThe80s(), expectedResultSix);
