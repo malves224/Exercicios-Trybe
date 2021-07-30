@@ -146,13 +146,11 @@ const expectedResult = [{
 	},
 ];
 
-function booksOrderedByReleaseYearDesc() {
-	const arrayDeObjetosOrdenados = books.sort((a, b) => b.releaseYear - a.releaseYear);
+function booksOrderedByReleaseYearDesc(dados) {
+	const arrayDeObjetosOrdenados = dados.sort((a, b) => b.releaseYear - a.releaseYear)
 	return arrayDeObjetosOrdenados;
-
 }
-//booksOrderedByReleaseYearDesc();
-assert.deepStrictEqual(booksOrderedByReleaseYearDesc(), expectedResult);
+assert.deepStrictEqual(booksOrderedByReleaseYearDesc(books), expectedResult);
 
 
 
@@ -186,5 +184,4 @@ function authorUnique() {
 		}
 	})
 }
-console.log( authorUnique());
 //assert.strictEqual(authorUnique(), expectedResultUnique);
