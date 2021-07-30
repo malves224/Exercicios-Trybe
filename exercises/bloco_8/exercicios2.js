@@ -64,6 +64,8 @@ const books = [
 
 const assert = require('assert');
 
+// exercicio 1
+
 const expectedResult = [
   'As Crônicas de Gelo e Fogo - Fantasia - George R. R. Martin',
   'O Senhor dos Anéis - Fantasia - J. R. R. Tolkien',
@@ -74,10 +76,8 @@ const expectedResult = [
 ];
 
 function formatedBookNames(livros) {
-  let arrayOutput = livros.map((livro => {
-    return `${livro.name} - ${livro.genre} - ${livro.author.name}`
-  }))
-  return arrayOutput
+  let arrayOutput = livros.map((livro) => `${livro.name} - ${livro.genre} - ${livro.author.name}`);
+  return arrayOutput;
 }
 
 assert.deepStrictEqual(formatedBookNames(books), expectedResult);
