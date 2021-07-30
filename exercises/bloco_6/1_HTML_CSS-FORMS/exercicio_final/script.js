@@ -19,13 +19,15 @@ window.onload = function (){
         maxLength: 40,
         minLength: 3,
       },
-      email: {
-        required: true,
-        maxLength: 50
-      },
+
       cpf: {
         required: true,
-        maxLength: 11
+        maxLength: 11,
+        minLength: 11
+      },
+      address: {
+        required: true,
+        maxLength: 200,
       }
     },
     messages: {
@@ -34,9 +36,15 @@ window.onload = function (){
         minLength: 'insira um nome com mais de 2 caracteres',
         maxLength: 'nome muito grande'
       },
-      email: {
-        required: 'Por favor insira seu email',
-        maxLength: 'email muito grande'
+      email: "Email invalido.",
+      cpf: {
+        required: "por favor insira seu CPF",
+        maxLength: 'CPF invalido',
+        minLength: 'CPF invalido'
+      },
+      address: {
+        required: 'campo obrigatorio',
+        maxLength: 'endereço muito grande'
       }
     },
 
