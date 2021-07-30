@@ -72,4 +72,6 @@ const expectedResult = [
     const anoAtual = new Date().getFullYear();
    return livros.filter((livro) => anoAtual - livro.releaseYear > 60 ).map((livro) => livro.name)
   }
- assert.deepStrictEqual(oldBooks(books), expectedResult);
+let testeQuebrarSyting = 'olá como vai voce'
+console.log(testeQuebrarSyting.split(' '));
+ //assert.deepStrictEqual(oldBooks(books), expectedResult);
