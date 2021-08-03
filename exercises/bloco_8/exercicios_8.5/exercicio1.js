@@ -9,7 +9,7 @@ const rectangles = [rectangle1, rectangle2, rectangle3];
 
 
 
-rectangles.forEach((value) => {
-	console.log(rectangleArea(...value))
-	assert.strictEqual(rectangleArea(...value), value[0] * value[1]); // altere a chamada da funcao rectangleArea
+rectangles.forEach((retangle) => {
+	console.log(rectangleArea(...retangle))
+	assert.strictEqual(rectangleArea(...retangle), retangle[0] * retangle[1]); // altere a chamada da funcao rectangleArea
 });
