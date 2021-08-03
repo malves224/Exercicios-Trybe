@@ -31,7 +31,7 @@ const people = [{
 
 const filterPeople = (peoples) => {
   return peoples.filter((people) => {
-    const { bornIn, nationality} = people; 
+    const { bornIn, nationality } = people; 
     return bornIn < 2000 && nationality === 'Australian'
   })
 }
