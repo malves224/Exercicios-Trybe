@@ -9,4 +9,14 @@ const numbers2 = [101, 85, -30, 3, 99];
 const getBigger = (bigger, number) => ((bigger > number) ? bigger : number);
 
 const bigger = numbers2.reduce(getBigger, 0);
-console.log(bigger); // 101
+// console.log(bigger); // 101
+
+const numbers3 = [18, 19, 23, 53, 4, 5, 76, 23, 54];
+
+const numbersPares = numbers3.filter((number) => number % 2 === 0)
+
+const callback = (acc, number) => acc + number;
+
+const sumPares = numbersPares.reduce(callback);
+
+console.log(sumPares);
