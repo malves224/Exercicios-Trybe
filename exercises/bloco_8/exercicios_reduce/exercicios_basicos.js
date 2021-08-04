@@ -13,10 +13,10 @@ const bigger = numbers2.reduce(getBigger, 0);
 
 const numbers3 = [18, 19, 23, 53, 4, 5, 76, 23, 54];
 
-const numbersPares = numbers3.filter((number) => number % 2 === 0)
+const getEven = (number) => number % 2 === 0
 
-const callback = (acc, number) => acc + number;
+const sumPares = (acc, number) => acc + number;
 
-const sumPares = numbersPares.reduce(callback);
+const sumNumbersPares = (numbers) =>  numbers.filter((getEven)).reduce(sumPares);
 
-console.log(sumPares);
+console.log(sumNumbersPares(numbers3));
