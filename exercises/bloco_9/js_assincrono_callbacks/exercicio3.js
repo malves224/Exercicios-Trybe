@@ -14,3 +14,6 @@ const sendMarsTemperature = (mensagen) => {
 }
 
 sendMarsTemperature(getMarsTemperature); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
+
+console.log('eu cheguei primeiro eheheheheheh');
+console.log('e eu em segundo uhuu')
