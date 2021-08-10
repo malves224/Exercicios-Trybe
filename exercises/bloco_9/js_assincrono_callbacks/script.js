@@ -43,3 +43,5 @@ const jsonInfo = `{
     newLi.innerText = linguagens;
     languagesList.appendChild(newLi);
   });
+
+  fetc
