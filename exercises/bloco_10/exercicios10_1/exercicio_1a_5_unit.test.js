@@ -81,5 +81,38 @@ describe('3º A função myRemoveWithoutCopy recebe um array arr e retorna o pr�
   test('ao chamar a função myRemoveWithoutCopy(numbersList, 5) retorna o array esperado', () => {
     expect(myRemoveWithoutCopy(numbersList, 5)).toEqual([1, 2, 3, 4]);
   });
+});
 
+function myFizzBuzz(num) {
+  if (typeof num !== 'number') return false;
+  if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
+  if (num % 3 === 0) return 'fizz';
+  if (num % 5 === 0) return 'buzz';
+  return num;
+}
+
+//console.log(myFizzBuzz(15));
+
+describe('4ºfunção myFizzBuzz(num) recebe um número num e retorna "fizzbuzz" se o número for divisível por 3 e 5 , retorna "fizz" se for divisível apenas por 3 , retorna "buzz" se divisível apenas por 5 , retorna o próprio número caso não seja divisível por 3 ou 5 e retorna false caso num não seja um número', () => { 
+
+  test('Ao chamar um numero divisivel por 3 e 5 retorna a string fizzbuzz', () => {
+    expect(myFizzBuzz(15)).toBe('fizzbuzz');
+  });
+
+  test('ao chamar a função com numero divisivel por 3, retorna a string fizz', () => {
+    expect(myFizzBuzz(6)).toBe('fizz');
+  });
+
+  test('ao chamar a função com um numero divisivel por 5, retorna a string buzz', () => { 
+    expect(myFizzBuzz(20)).toBe('buzz');
+  });
+
+  test('ao chamar a função com um numero que nao seja divisivel por 5 e 3 retorna o proprio numero passado por parametro', () => {
+    const numberCheck = 4;
+    expect(myFizzBuzz(numberCheck)).toBe(numberCheck);
+  });
+
+  test('ao chamar a função com parametro que nao seja um number, retornar false', () => { 
+    expect(myFizzBuzz('1')).toBe(false);
+  });
 });
