@@ -61,7 +61,25 @@ function myRemoveWithoutCopy(arr, item) {
 
 describe('3º A função myRemoveWithoutCopy recebe um array arr e retorna o próprio array sem o elemento item caso ele exista no array', () => { 
   let numbersList = [1, 2, 3, 4];
+
   test('verifica se a ao chamar a função com o primeiro parametro um array, e o seguindo item para remover, retorna o mesmo array sem o item', () => {
     expect(myRemoveWithoutCopy(numbersList, 3)).toEqual([1, 2, 4]);
-  })
+    numbersList = [1, 2, 3, 4];
+  });
+
+  test('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]', () => { 
+    expect(myRemoveWithoutCopy(numbersList, 3)).not.toEqual([1, 2, 3, 4]);
+    numbersList = [1, 2, 3, 4];
+  });
+
+  test('ao chamar a função myRemoveWithoutCopy verifica se o array passado como parametro sofreu alterações', () => { 
+    myRemoveWithoutCopy(numbersList, 3);
+    expect(numbersList).not.toEqual([1, 2, 3, 4]);
+    numbersList = [1, 2, 3, 4];
+  });
+
+  test('ao chamar a função myRemoveWithoutCopy(numbersList, 5) retorna o array esperado', () => {
+    expect(myRemoveWithoutCopy(numbersList, 5)).toEqual([1, 2, 3, 4]);
+  });
+
 });
