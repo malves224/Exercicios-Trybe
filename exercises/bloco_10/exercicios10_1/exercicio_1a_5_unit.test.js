@@ -116,3 +116,28 @@ describe('4ºfunção myFizzBuzz(num) recebe um número num e retorna "fizzbuzz"
     expect(myFizzBuzz('1')).toBe(false);
   });
 });
+
+  describe('5º comparação de 2 objetos para verificar se são idênticos ou nao', () => { 
+  const obj1 = {
+    title: 'My Title',
+    description: 'My Description',
+  };
+  
+  const obj2 = {
+    description: 'My Description',
+    title: 'My Title',
+  };
+  
+  const obj3 = {
+    title: 'My Different Title',
+    description: 'My Description',
+  };
+  
+  test('verifica se o obj1 é identico ao obj2', () => { 
+    expect(obj1).toEqual(obj2);
+  })
+
+  test('verifica se o obj1 NAO é identico ao obj3', () => { 
+    expect(obj1).not.toEqual(obj3);
+  })
+});
