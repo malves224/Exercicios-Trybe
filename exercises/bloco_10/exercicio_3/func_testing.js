@@ -41,13 +41,15 @@ function decode(string) {
 
 function techList(array, stringName) {
 	let arrayOutPut = [];
-	for (let index of array) {
-		let objeto = {
-			tech: index,
-			name: stringName
-		}
-		arrayOutPut.push(objeto)
-	};
+	array.forEach((tech) => {
+		{
+			let objeto = {
+				tech: tech,
+				name: stringName
+			}
+			arrayOutPut.push(objeto)
+		};
+	})
 	if (array.length === 0) {
 		return "Vazio!";
 	} else {
@@ -73,7 +75,9 @@ function hydrate(string) {
 	};
 };
 
-module.exports = { 
+console.log(typeof encode);
+
+module.exports = {
 	encode,
 	decode,
 	techList,
