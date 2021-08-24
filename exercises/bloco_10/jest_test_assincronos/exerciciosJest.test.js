@@ -28,10 +28,3 @@ test('Testando asyncSum, soma 5 mais 10', (done) => {
   });
 });
 
-test('Não deveria passar!2', (done) => {
-  setTimeout(() => {
-    expect(10).toBe(5);
-    console.log('Deveria falhar!');
-    done();
-  }, 500);
-});
