@@ -40,10 +40,7 @@ describe('Quando o tipo do animal existe', () => {
 describe('Quando o tipo de animal não existe', () => {
   test('Retorna um erro', async () => {
     expect.assertions(1);
-    try {
-      await findAnimalsByType('Lion');
-    } catch (error) {
-      expect(error).toEqual(new Error('Não possui esse tipo de animal.'));
-    }
+    await expect(findAnimalsByType('Lion')).rejects
+      .toEqual(new Error('Não possui esse tipo de animal.'));
   });
 });
