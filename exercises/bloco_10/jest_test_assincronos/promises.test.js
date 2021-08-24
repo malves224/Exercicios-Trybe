@@ -30,17 +30,16 @@ const findAnimalsByType = (type) => (
 );
 
 describe('Quando o tipo do animal existe', () => {
-  test('Retorne a lista de animais', () => (
-    findAnimalsByType('Dog').then((listDogs) => {
-      expect(listDogs[0].name).toEqual('Dorminhoco');
-      expect(listDogs[1].name).toEqual('Soneca');
-    })
-  ));
+  test('Retorne a lista de animais', async () => {
+    const listDogs = await findAnimalsByType('Dog');
+    expect(listDogs[0].name).toEqual('Dorminhoco');
+    expect(listDogs[1].name).toEqual('Soneca');
+  });
 });
 
 describe('Quando o tipo de animal não existe', () => {
   test('Retorna um erro', () => (
     expect(findAnimalsByType('Lion'))
-      .rejects.toEqual(new Error('Não possui esse tipo de animal.'))
+    .rejects.toEqual(new Error('Não possui esse tipo de animal.'))
   ));
 });
