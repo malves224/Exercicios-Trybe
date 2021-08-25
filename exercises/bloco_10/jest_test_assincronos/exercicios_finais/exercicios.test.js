@@ -17,10 +17,14 @@ describe('1º testa callback da função, uppercase que transforma uma palavra e
 	});
 });
 
-describe('2º verifica se a função getUserName no caso de falha e sucesso', () => { 
-	it('verifica o comportamento esperado quando o usuario é encontrado', async () => { 
-		 const resolvPromise = await findUserById(1);
-		 expect(resolvPromise).toEqual({ id: 1, name: 'Mark' });
+describe('2º verifica se a função getUserName no caso de falha e sucesso', () => {
+	it('verifica o comportamento esperado quando o usuario é encontrado', () => {
+		return expect(findUserById(1)).resolves.toEqual({
+			id: 1,
+			name: 'Mark'
+		});
+	});
+	it('verifica o comportamento esperado quando nao encontra o usuario', () => {
+		return expect(findUserById(3)).rejects.toEqual(Error('User with 3 not found.'));
 	})
 });
-
