@@ -1,5 +1,7 @@
 const {
 	uppercase,
+	findUserById,
+	getUserName,
 } = require('./funcParaTestar');
 
 describe('1º testa callback da função, uppercase que transforma uma palavra em letras maiusculas', () => {
@@ -14,3 +16,11 @@ describe('1º testa callback da função, uppercase que transforma uma palavra e
 		})
 	});
 });
+
+describe('2º verifica se a função getUserName no caso de falha e sucesso', () => { 
+	it('verifica o comportamento esperado quando o usuario é encontrado', async () => { 
+		 const resolvPromise = await findUserById(1);
+		 expect(resolvPromise).toEqual({ id: 1, name: 'Mark' });
+	})
+});
+
