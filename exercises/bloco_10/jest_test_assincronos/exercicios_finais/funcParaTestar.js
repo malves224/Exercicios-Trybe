@@ -53,30 +53,31 @@ const Animals = [{
   },
 ];
 
-const findAnimalsByType = (type) => (
-  new Promise((resolve, reject) => {
+const findAnimalByName = (name) => {
+  new Promise((resolve, reject) => { 
     setTimeout(() => {
-      const arrayAnimals = Animals.filter((animal) => animal.type === type);
-      if (arrayAnimals.length !== 0) {
-        return resolve(arrayAnimals);
+      const listArray = Animals.filter((animal) => animal.name === name);
+      if (listArray.length !== 0) {
+        return resolve(listArray);
       };
 
-      return reject({
-        error: 'Não possui esse tipo de animal.'
-      });
+      return reject({ error: 'Nenhum animal com esse nome!'});
     }, 100);
-  })
-);
+  });
+};
 
-const getListAnimals = (type) => (
-  findAnimalsByType(type).then(list => list)
-);
+const getAnimal = async (name) => {
+  return findAnimalByName(name).then(list => console.log(list));
+};
+// ---------------------
+
+getAnimal('Soneca');
 
 module.exports = {
   uppercase,
   findUserById,
   getUserName,
   getRepos,
-  getListAnimals,
-  findAnimalsByType,
+  findAnimalByName,
+  getAnimal,
 }
