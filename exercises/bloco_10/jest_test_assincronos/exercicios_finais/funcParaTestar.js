@@ -53,25 +53,25 @@ const Animals = [{
   },
 ];
 
-const findAnimalByName = (name) => {
-  new Promise((resolve, reject) => { 
+const findAnimalByName = (name) => (
+  new Promise((resolve, reject) => {
     setTimeout(() => {
-      const listArray = Animals.filter((animal) => animal.name === name);
-      if (listArray.length !== 0) {
-        return resolve(listArray);
+      const arrayAnimals = Animals.filter((animal) => animal.name === name);
+      if (arrayAnimals.length !== 0) {
+        return resolve(arrayAnimals[0]);
       };
 
-      return reject({ error: 'Nenhum animal com esse nome!'});
+      return reject('Nenhum animal com esse nome!');
     }, 100);
-  });
-};
+  })
+);
 
 const getAnimal = async (name) => {
-  return findAnimalByName(name).then(list => console.log(list));
+  return findAnimalByName(name).then(animal => animal);
 };
 // ---------------------
 
-getAnimal('Soneca');
+getAnimal('Dorminhoco');
 
 module.exports = {
   uppercase,
