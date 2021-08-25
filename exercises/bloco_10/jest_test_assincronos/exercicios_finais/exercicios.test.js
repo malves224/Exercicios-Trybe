@@ -2,6 +2,7 @@ const {
 	uppercase,
 	findUserById,
 	getUserName,
+	getRepos,
 } = require('./funcParaTestar');
 
 describe('1º testa callback da função, uppercase que transforma uma palavra em letras maiusculas', () => {
@@ -34,3 +35,14 @@ describe('2º verifica se a função getUserName no caso de falha e sucesso', ()
 		}
 	})
 });
+
+describe('3º verifica se a função getRepos tem o comportamento esperado', () => { 
+	it ('verifica se tem alguns repositorios especificos no array que a função getRepos retorna ', async () => { 
+		const url = 'https://api.github.com/orgs/tryber/repos';
+		const firstRepository = 'sd-01-week4-5-project-todo-list';
+		const secondRepository = 'sd-01-week4-5-project-meme-generator';
+		const arrayRepos = await getRepos(url);
+		expect(arrayRepos).toContain(firstRepository);
+		expect(arrayRepos).toContain(secondRepository);
+	})
+})
