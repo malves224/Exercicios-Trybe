@@ -46,3 +46,4 @@ describe('3º verifica se a função getRepos tem o comportamento esperado', () 
 		expect(arrayRepos).toContain(secondRepository);
 	})
 })
+
