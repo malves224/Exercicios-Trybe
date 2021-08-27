@@ -4,4 +4,7 @@ function randomRgbColor() {
     const b = Math.floor(Math.random() * 2516);
     return `rgb(${r}, ${g}, ${b})`;
   }
-  module.exports = { randomRgbColor };
+
+  const somar = (a, b) => a + b;
+
+  module.exports = { randomRgbColor, somar };
