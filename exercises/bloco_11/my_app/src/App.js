@@ -1,7 +1,10 @@
 import React from 'react';
-import HelloWorld from './HelloWorld';
+import MyName from './Component';
 
 function App() { 
+  return (
+    <MyName />
+  )
 }
 
 export default App;
