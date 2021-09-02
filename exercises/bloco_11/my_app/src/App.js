@@ -1,18 +1,16 @@
 import React from 'react';
-import MyName from './Component';
+import Pokemons from './data'
+import PokemonsList from './componentes/listPokemons'
 
-const taskFunction = (value) => { 
-	return (
-		<li>{value}</li>
-	);
-}
 
-const compromissos = ['lavar louça', 'oi', 'agora sim'];
-
-function App() { 
-  return (
-    compromissos.map((item => taskFunction(item)))
-  );
-}
+class App extends React.Component  {
+  render () { 
+    return (
+      <main>
+        <PokemonsList pokemonsData={ Pokemons } />
+      </main>
+    );
+  } 
+};
 
 export default App;
