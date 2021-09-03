@@ -10,37 +10,45 @@ class App extends Component {
     this.handleChage = this.handleChage.bind(this);
 
     this.state = { 
-      saudacao: '',
+      estado: '',
+      deficiencia: false,
+      descricao: '',
     }
   } 
 
-  handleChage(event) { 
+  handleChage({ target }) { 
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({ 
-      saudacao: event.target.value,
+      [name]: value,
     })
   }
   render() {
     return (
       <form className="form"> 
         <label> 
-        escolha uma saudação:
-
+        qual seu estado:
             <select 
+            name="estado"
             onChange={this.handleChage}
-            value={ this.state.saudacao }
+            value={ this.state.estado }
             >  
-              <option> OLá</option>
-              <option> oi </option>
-              <option> érr </option>
+              <option> </option>
+              <option> SP </option>
+              <option> RJ </option>
+              <option> BH </option>
+              <option> CE </option>
             </select>
         </label>
         <label> 
-          marque essa opção
-          <input type="checkbox" />
+          marque essa opção, caso tenha alguma deficiencia fisica: 
+          <input name="deficiencia" type="checkbox" 
+          onChange={ this.handleChage }
+          value={ this.state.deficiencia }/>
         </label>
         <label> 
-          escreva algo
-          <input type="textarea" /> 
+          descricao 
+          <input value={ this.state.descricao } name="descricao" onChange={ this.handleChage } type="textarea" /> 
         </label>
       </form>
     );
