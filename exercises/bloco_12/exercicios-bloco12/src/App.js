@@ -7,49 +7,26 @@ import './style.css';
 class App extends Component {
   constructor() { 
     super();
-    this.handleChage = this.handleChage.bind(this);
-
-    this.state = { 
-      estado: '',
-      deficiencia: false,
-      descricao: '',
+    this.state = {
+      nome: '',
     }
-  } 
+    this.handleChange = this.handleChange.bind(this);
 
-  handleChage({ target }) { 
-    const { name } = target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({ 
-      [name]: value,
+  }
+
+  handleChange({target}) { 
+    const valueUpercase = target.value.toUpperCase();
+    this.setState({
+      nome: valueUpercase,
     })
   }
+
   render() {
     return (
-      <form className="form"> 
-        <label> 
-        qual seu estado:
-            <select 
-            name="estado"
-            onChange={this.handleChage}
-            value={ this.state.estado }
-            >  
-              <option> </option>
-              <option> SP </option>
-              <option> RJ </option>
-              <option> BH </option>
-              <option> CE </option>
-            </select>
-        </label>
-        <label> 
-          marque essa opção, caso tenha alguma deficiencia fisica: 
-          <input name="deficiencia" type="checkbox" 
-          onChange={ this.handleChage }
-          value={ this.state.deficiencia }/>
-        </label>
-        <label> 
-          descricao 
-          <input value={ this.state.descricao } name="descricao" onChange={ this.handleChage } type="textarea" /> 
-        </label>
+      <form> 
+      <fieldset> 
+        <input value={ this.state.nome } name="nome" required maxLength="40" onChange={ this.handleChange }/>
+      </fieldset>
       </form>
     );
   }
