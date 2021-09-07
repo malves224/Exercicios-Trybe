@@ -1,8 +1,10 @@
 import React from 'react';
 import PokemonComponent from './pokemon';
 import '../style.css';
+import PropTypes from 'prop-types';
 
 class PokemonsList extends React.Component {
+
   constructor() { 
     super(); // A função `super()` é chamada para garantir que a lógica interna do React rode **antes** da sua. Se não for assim, o código não funcionará
     this.handleChange = this.handleChange.bind(this) // isso é para que a função handleChange consiga acessar o this da classe
@@ -18,6 +20,7 @@ class PokemonsList extends React.Component {
       valueSearch: search,
     });
   }
+
 	render() {
 		const { pokemonsData } = this.props;
     const { valueSearch } = this.state;
@@ -25,15 +28,21 @@ class PokemonsList extends React.Component {
       <main className="main">
         <h1 className="title"> Pokemons </h1>
         <input id="search" onChange={ this.handleChange } type="text" />
-        <div className="listPokemons" >
+        <section className="listPokemons" >
 			  	{ pokemonsData.filter((pokemon) => pokemon.name.toUpperCase()
           .includes(valueSearch))
           .map((pokemon) => <PokemonComponent className="cardsPokemons" 
            key={pokemon.id} pokemonsInfo={pokemon} />) }
-		  	</div>
+		  	</section>
       </main>  
 			);
 	}
 }
+
+PokemonsList.propTypes = { 
+  pokemonsData: PropTypes.arrayOf(PropTypes.shape({ 
+    map: PropTypes.func,
+  })).isRequired,
+};
 
 export default PokemonsList;
