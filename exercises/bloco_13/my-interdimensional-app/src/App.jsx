@@ -11,19 +11,34 @@ class App extends Component {
   }
 
   async fetchCharacters() {
-    const fetch = await fetch('https://rickandmortyapi.com/api/character');
-    const charactersData = await fetch.json();
-    this.setState({ 
-      characters: charactersData,
+    const fetchRick = await fetch('https://rickandmortyapi.com/api/character');
+    const charactersData = await fetchRick.json();
+    this.setState({
+      characters: charactersData.results,
     });
   };
 
+  componentDidMount()  { 
+    this.fetchCharacters();
+  }
+
   render() {
+    const { characters } = this.state;
     return (
       <div className="App">
         <h1>
-        Ricky and Morty Characters:
+          Ricky and Morty Characters:
         </h1>
+        <div className="body">
+          { characters.map(({name, image}) => {
+            return (
+              <div className="container" key={name}>
+                <h3>{name}</h3>
+                <img src={image} alt={name} />
+              </div>
+            )
+          })}
+        </div>
       </div>
     );
   }
