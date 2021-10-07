@@ -38,7 +38,7 @@
         index: 0,
       };
       const NEXT_COLOR = "NEXT";
-      const PREVIOUS_COLOR ="PREVIOUS"
+      const PREVIOUS_COLOR = "PREVIOUS";
       const reducer = (state = ESTADO_INICIAL, action) => { 
         switch (action.type) { 
           case NEXT_COLOR:
@@ -46,8 +46,11 @@
               ...state,
               index: state.index + action.index,
             }
-          case "PREVIOUS":
-            // rotina previous
+          case PREVIOUS_COLOR:
+          return { 
+              ...state,
+              index: state.index - action.index,
+            }
           default: 
           return state;
         };
@@ -57,6 +60,11 @@
 
        const nextColor = (index) => ({
         type: NEXT_COLOR,
+        index,
+       });
+
+       const previousColor = (index) => ({ 
+        type: PREVIOUS_COLOR,
         index,
        });
 
@@ -71,7 +79,13 @@
          const indexCurrent = store.getState().index;
          const incrementIndex = indexCurrent === lastIndex ? -lastIndex: 1;
          store.dispatch(nextColor(incrementIndex));
-       })
+       });
+       document.getElementById('previous').addEventListener('click', () => { 
+         const lastIndex = ESTADO_INICIAL.colors.length-1;
+         const indexCurrent = store.getState().index;
+         const decrementIndex = indexCurrent === 0 ? -lastIndex: 1;
+         store.dispatch(previousColor(decrementIndex));
+       });
     </script>
   </body>
 </html>
