@@ -37,8 +37,41 @@
         colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
         index: 0,
       };
+      const NEXT_COLOR = "NEXT";
+      const PREVIOUS_COLOR ="PREVIOUS"
+      const reducer = (state = ESTADO_INICIAL, action) => { 
+        switch (action.type) { 
+          case NEXT_COLOR:
+            return { 
+              ...state,
+              index: state.index + action.index,
+            }
+          case "PREVIOUS":
+            // rotina previous
+          default: 
+          return state;
+        };
+       };
 
-      const store = Redux.createStore(reducer);
+       const store = Redux.createStore(reducer);
+
+       const nextColor = (index) => ({
+        type: NEXT_COLOR,
+        index,
+       });
+
+       store.subscribe(() => {
+         const indexCurrent = store.getState().index;
+         const colorCurrent = store.getState().colors[indexCurrent];
+         document.getElementById('value').innerHTML = colorCurrent
+       })
+
+       document.getElementById('next').addEventListener('click', () => { 
+         const lastIndex = ESTADO_INICIAL.colors.length-1;
+         const indexCurrent = store.getState().index;
+         const incrementIndex = indexCurrent === lastIndex ? -lastIndex: 1;
+         store.dispatch(nextColor(incrementIndex));
+       })
     </script>
   </body>
 </html>
