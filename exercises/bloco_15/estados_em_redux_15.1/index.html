@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+    </div>
+    <script>
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+      const NEXT_COLOR = "NEXT";
+      const PREVIOUS_COLOR = "PREVIOUS";
+      const reducer = (state = ESTADO_INICIAL, action) => { 
+        switch (action.type) { 
+          case NEXT_COLOR:
+            return { 
+              ...state,
+              index: state.index + action.index,
+            }
+          case PREVIOUS_COLOR:
+          return { 
+              ...state,
+              index: state.index - action.index,
+            }
+          default: 
+          return state;
+        };
+       };
+
+       const store = Redux.createStore(reducer);
+
+       const nextColor = (index) => ({
+        type: NEXT_COLOR,
+        index,
+       });
+
+       const previousColor = (index) => ({ 
+        type: PREVIOUS_COLOR,
+        index,
+       });
+
+       store.subscribe(() => {
+         const indexCurrent = store.getState().index;
+         const colorCurrent = store.getState().colors[indexCurrent];
+         document.getElementById('value').innerHTML = colorCurrent
+       })
+
+       document.getElementById('next').addEventListener('click', () => { 
+         const lastIndex = ESTADO_INICIAL.colors.length-1;
+         const indexCurrent = store.getState().index;
+         const incrementIndex = indexCurrent === lastIndex ? -lastIndex: 1;
+         store.dispatch(nextColor(incrementIndex));
+       });
+       document.getElementById('previous').addEventListener('click', () => { 
+         const lastIndex = ESTADO_INICIAL.colors.length-1;
+         const indexCurrent = store.getState().index;
+         const decrementIndex = indexCurrent === 0 ? -lastIndex: 1;
+         store.dispatch(previousColor(decrementIndex));
+       });
+    </script>
+  </body>
+</html>
