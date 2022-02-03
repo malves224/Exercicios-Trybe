@@ -2,7 +2,7 @@
 const express = require('express');
 const { Address, Employee, Book, User } = require('./models');
 const bodyParser = require('body-parser');
-const Sequelize = require('sequelize');
+const Sequelize = require('sequelize'); // atenção para configuração do sequelize *** 
 const config = require('./config/config');
 
 
@@ -40,7 +40,7 @@ app.post('/employees', async (req, res) => { // caso do uso, utilizando transact
 
     // Se chegou até essa linha, quer dizer que nenhum erro ocorreu.
     // Com isso, podemos finalizar a transação usando a função `commit`.
-    await transaction.commit();
+    await transaction.commit(); // se remover commit e roolback o sequelize ira controlar quando desfazer a transaction ou concluir.
 
     return res.status(201).json({ message: 'Cadastrado com sucesso' },);
   } catch (e) {
