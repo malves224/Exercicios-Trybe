@@ -1,4 +1,5 @@
 module.exports = {
+  // analogia nosso user
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('Addresses', {
       id: {

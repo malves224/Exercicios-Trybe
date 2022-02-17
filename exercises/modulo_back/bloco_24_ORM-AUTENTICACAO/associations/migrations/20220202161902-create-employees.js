@@ -1,4 +1,5 @@
 module.exports = {
+  // nosso perfil
   up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('Employees', {
       id: {
