@@ -4,6 +4,6 @@
     "preserveConstEnums": true, // Não apaga as declarações const enum no código gerado
     "outDir": "./src", // pasta onde nossos arquivos compilados serão salvos
   },
-  "include": ["."], // incluimos na compilação todos os arquivos dentro do diretório "src"
+  "include": ["./"], // incluimos na compilação todos os arquivos dentro do diretório "src"
   "exclude": ["node_modules", "**/*.spec.ts"] // excluímos da compilação a pasta node_modules e nossos arquivos de testes
 }
