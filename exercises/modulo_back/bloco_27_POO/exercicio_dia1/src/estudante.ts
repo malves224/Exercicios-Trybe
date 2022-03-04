@@ -22,11 +22,11 @@ class Estudante {
     const somaAllNotas = [...this._notasDeProva, ...this._notasDeTrabalho]
       .reduce((prev, current) => prev + current);    
     const avgNotas = somaAllNotas / [...this._notasDeProva, ...this._notasDeTrabalho].length;
-    return avgNotas;
+    return Number(avgNotas.toFixed(2));
   }
 }
 
 const joao = new Estudante('joão', '125', [3, 5, 8, 4], [6, 8]);
-console.log(joao);
-console.log(joao.avgNotas.toFixed(2));
+// console.log(joao);
+console.log(joao.avgNotas);
 
